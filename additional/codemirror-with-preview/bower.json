@@ -1,0 +1,12 @@
+{
+  "name": "codemirror-with-preview",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "fontawesome": "~4.1.0",
+    "jquery": "",
+    "codemirror": "",
+    "marked": ""
+  }
+}

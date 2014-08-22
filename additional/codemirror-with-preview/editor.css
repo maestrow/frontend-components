@@ -1,0 +1,102 @@
+body {
+    color: #444444;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+ul, ol {
+    padding-left: 30px;
+}
+
+p, hr, ul, ol, dl, blockquote, pre, address, fieldset, figure {
+    margin: 0 0 15px;
+}
+
+a, .uk-link {
+    color: #0077dd;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a {
+    background: none repeat scroll 0 0 transparent;
+}
+
+
+.uk-htmleditor-content {
+    background: none repeat scroll 0 0 #ffffff;
+    border-bottom: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+}
+.uk-htmleditor-content:before, .uk-htmleditor-content:after {
+    content: " ";
+    display: table;
+}
+.uk-htmleditor-content:after {
+    clear: both;
+}
+
+
+.uk-htmleditor-navbar {
+    background: none repeat scroll 0 0 #eeeeee;
+}
+.uk-htmleditor-navbar:before, .uk-htmleditor-navbar:after {
+    content: " ";
+    display: table;
+}
+.uk-htmleditor-navbar:after {
+    clear: both;
+}
+
+
+.uk-htmleditor-navbar-nav {
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.uk-htmleditor-navbar-flip {
+    float: right;
+}
+.uk-htmleditor-navbar-nav > li {
+    float: left;
+}
+.uk-htmleditor-navbar-nav > li > a {
+    box-sizing: border-box;
+    color: #444444;
+    cursor: pointer;
+    display: block;
+    font-size: 11px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+
+
+[data-mode="split"] .uk-htmleditor-code {
+    border-right: 1px solid #eeeeee;
+}
+[data-mode="split"] .uk-htmleditor-code, [data-mode="split"] .uk-htmleditor-preview {
+    float: left;
+    width: 50%;
+}
+.uk-htmleditor-code, .uk-htmleditor-preview {
+    box-sizing: border-box;
+}
+
+
+
+
+.uk-htmleditor .CodeMirror {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.uk-htmleditor-preview {
+    overflow-y: scroll;
+    padding: 20px;
+}

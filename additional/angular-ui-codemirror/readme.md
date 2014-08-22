@@ -1,0 +1,1 @@
+В `codemirror-component` реализован редактор markdown разметки с предпросмотром (логика выделена из UIKit html editor, используется codemirror). Задача данного проекта - перенести всю логику в директиву angularjs, доработав существующий проект `angular-ui-codemirror`.
