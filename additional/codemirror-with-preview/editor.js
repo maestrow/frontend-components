@@ -27,7 +27,7 @@ $(function() {
     var code = $('.CodeMirror'),
         codeContent = $('.CodeMirror-sizer'),
         codeScroll = $('.CodeMirror-scroll'),
-        preview = $('.uk-htmleditor-preview')
+        preview = $('.cm-editor-preview')
 
     code.css('height', options.height);
     preview.css('height', options.height);
@@ -50,7 +50,7 @@ $(function() {
     });
 
     function updatePreview() {
-        var previewPane = $('.uk-htmleditor-preview');
+        var previewPane = $('.cm-editor-preview');
         previewPane.html(parser(editor.getValue()));
     }
     setTimeout(updatePreview, 300);
