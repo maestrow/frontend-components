@@ -1,0 +1,20 @@
+{
+  "name": "html5css3-cookbook",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -p 8081"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maestrow/html5css3-cookbook"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maestrow/html5css3-cookbook/issues"
+  },
+  "homepage": "https://github.com/maestrow/html5css3-cookbook"
+}

@@ -1,0 +1,11 @@
+.grippie {
+  /*background-image: url('http://cdn.sstatic.net/stackoverflow/img/sprites.png?v=3c6263c3453b');*/
+  /*background-repeat: no-repeat;*/
+  background-position: 321px -823px;
+  border: 1px solid #ddd;
+  border-width: 0 1px 1px;
+  cursor: s-resize;
+  height: 9px;
+  overflow: hidden;
+  background-color: #eee;
+}

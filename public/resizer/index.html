@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="resizer.css">
+  <script type="text/javascript" src="resizer.js"></script>
+</head>
+<body>
+  <style>
+
+    .container {
+      border: 1px lightgray solid;
+      height: 200px;
+      min-height: 100px;
+    }
+
+    .container, .panel, textarea {
+      box-sizing: border-box;
+      padding: 10px;
+    }
+
+    .panel {
+      border: 1px black solid;
+      float: left;
+      width: 50%;
+      height: 100%;
+    }
+
+    textarea {
+      border: 1px blue solid;
+      height: 100%;
+      resize: none;
+    }
+  </style>
+
+  <div class="container">
+    <div class="panel">
+      <textarea autofocus>This is textarea</textarea>  
+    </div>
+    <div class="panel">Lorem ipsum</div>
+  </div>
+  <div class="grippie"></div>
+
+  <script>
+    var dragObj = new Resizable(document.getElementsByClassName('grippie')[0], document.getElementsByClassName('container')[0]);
+  </script>  
+</body>
+</html>
