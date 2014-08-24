@@ -2,18 +2,21 @@
 <html>
 <head>
   <link rel="stylesheet" href="resizer.css">
-  <script type="text/javascript" src="resizer.js"></script>
+  <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="app-resizer.js"></script>
+  <script type="text/javascript">
+    angular.module('app', ['appResizer']);
+  </script>
 </head>
-<body>
+<body ng-app="app">
   <style>
-
-    .container {
+    #container {
       border: 1px lightgray solid;
       height: 200px;
       min-height: 100px;
     }
 
-    .container, .panel, textarea {
+    #container, .panel, textarea {
       box-sizing: border-box;
       padding: 10px;
     }
@@ -32,16 +35,13 @@
     }
   </style>
 
-  <div class="container">
+  <div id="container">
     <div class="panel">
       <textarea autofocus>This is textarea</textarea>  
     </div>
     <div class="panel">Lorem ipsum</div>
   </div>
-  <div class="grippie"></div>
+  <div app-resizer class="grippie" container="container"></div>
 
-  <script>
-    var dragObj = new Resizable(document.getElementsByClassName('grippie')[0], document.getElementsByClassName('container')[0]);
-  </script>  
 </body>
 </html>

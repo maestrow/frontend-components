@@ -1,0 +1,7 @@
+{
+  "name": "resizer",
+  "private": true,
+  "devDependencies": {
+    "angular": ""
+  }
+}
