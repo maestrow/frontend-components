@@ -1,4 +1,89 @@
 (function() {
+    function Resizable(grip, container) {
+        grip.dragObject = this;
+        dragMaster.makeDraggable(grip);
+
+        var rememberHeight,
+            startY;
+
+        this.onDragStart = function(x, y) {
+            rememberHeight = container.clientHeight;
+            startY = y;
+        }
+         
+        this.onDragMove = function(x, y) {
+            container.style.height = rememberHeight + (y - startY) + 'px';
+        }
+         
+        this.onDragSuccess = function(dropTarget) { }
+         
+        this.onDragFail = function() { };
+         
+        this.toString = function() {
+            return grip.id;
+        }
+    };
+
+
+    var dragMaster = (function() {
+        var dragObject;
+        var mouseDownAt;
+        var currentDropTarget;
+
+        function mouseDown(e) {
+            if (e.which!=1) 
+              return;
+     
+            mouseDownAt = { x: e.pageX, y: e.pageY, element: this };
+            addDocumentEventHandlers();
+            return false;
+        };
+     
+     
+        function mouseMove(e){
+            if (mouseDownAt) {
+                // Начать перенос
+                var elem  = mouseDownAt.element;
+                // текущий объект для переноса
+                dragObject = elem.dragObject;
+                 
+                dragObject.onDragStart(mouseDownAt.x, mouseDownAt.y); // начали
+                mouseDownAt = null // запомненное значение больше не нужно, сдвиг уже вычислен
+            }
+     
+            dragObject.onDragMove(e.pageX, e.pageY);
+            return false;
+        };
+         
+         
+        function mouseUp(){
+            if (!dragObject) {
+                mouseDownAt = null;
+            } else {
+                dragObject = null;
+            }
+     
+            removeDocumentEventHandlers();
+        };
+     
+    
+        function addDocumentEventHandlers() {
+            document.onmousemove = mouseMove;
+            document.onmouseup = mouseUp;
+            document.ondragstart = document.body.onselectstart = function() {return false};
+        };
+        
+        function removeDocumentEventHandlers() {
+            document.onmousemove = document.onmouseup = document.ondragstart = document.body.onselectstart = null;
+        };
+     
+        return {
+            makeDraggable: function(element) {
+                element.onmousedown = mouseDown;
+            }
+        };
+    }());
+
     var tpl = 
         '<div class="cm-editor uk-clearfix" data-mode="split">'+
         '  <div class="cm-editor-navbar">'+
@@ -24,6 +109,7 @@
         '    <div class="cm-editor-code"></div>'+
         '    <div class="cm-editor-preview"></div>'+
         '  </div>'+
+        '  <div class="cm-editor-grippie"></div>'+
         '</div>';
 
     var markedOptions = { 
@@ -54,8 +140,9 @@
             previewPane.innerHTML = parser(editor.getValue());
         }
 
-        code.style.height = options.height;
-        preview.style.height = options.height;
+        document.getElementsByClassName('cm-editor-content')[0].style.height = options.height;
+        //code.style.height = options.height;
+        //preview.style.height = options.height;
 
         editor.on('change', function() {
             clearTimeout(delay);
@@ -91,6 +178,7 @@
                         document.getElementsByClassName('cm-editor-code')[0].appendChild(cm_el);
                     }, cmOptions);
                     setupEditor(codeMirror, marked, options);
+                    new Resizable(document.getElementsByClassName('cm-editor-grippie')[0], document.getElementsByClassName('cm-editor-content')[0]);
                 }
             }
         });

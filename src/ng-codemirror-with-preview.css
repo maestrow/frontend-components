@@ -1,3 +1,4 @@
+/* clearfix */
 .uk-clearfix:before,
 .uk-clearfix:after {
   content: " ";
@@ -7,11 +8,20 @@
   clear: both;
 }
 
+
+/* cm-editor */
+.cm-editor {
+    min-height: 300px; /* ToDo: не работает ограничение минимальной высоты */
+}
+
+/* cm-editor-content */
 .cm-editor-content {
+    box-sizing: border-box;
     background: none repeat scroll 0 0 #ffffff;
     border-bottom: 1px solid #dddddd;
     border-left: 1px solid #dddddd;
     border-right: 1px solid #dddddd;
+    padding: 0 0 0 0;
 }
 .cm-editor-content:before, .cm-editor-content:after {
     content: " ";
@@ -21,7 +31,7 @@
     clear: both;
 }
 
-
+/* cm-editor-navbar */
 .cm-editor-navbar {
     background: none repeat scroll 0 0 #eeeeee;
 }
@@ -32,8 +42,6 @@
 .cm-editor-navbar:after {
     clear: both;
 }
-
-
 .cm-editor-navbar-nav {
     float: left;
     list-style: none outside none;
@@ -59,27 +67,40 @@
 }
 
 
-
-[data-mode="split"] .cm-editor-code {
+/* cm-editor-code */
+.cm-editor-code {
     border-right: 1px solid #eeeeee;
 }
-[data-mode="split"] .cm-editor-code, [data-mode="split"] .cm-editor-preview {
+.cm-editor-code, [data-mode="split"] .cm-editor-preview {
     float: left;
     width: 50%;
 }
 .cm-editor-code, .cm-editor-preview {
     box-sizing: border-box;
+    height: 100%;
 }
-
-
-
-
 .cm-editor .CodeMirror {
     box-sizing: border-box;
     padding: 10px;
+    height: 100%;
 }
 
+/* cm-editor-preview */
 .cm-editor-preview {
     overflow-y: scroll;
     padding: 20px;
+}
+
+
+/* cm-editor-grippie */
+.cm-editor-grippie {
+    /*background-image: url('http://cdn.sstatic.net/stackoverflow/img/sprites.png?v=3c6263c3453b');*/
+    /*background-repeat: no-repeat;*/
+    background-position: 321px -823px;
+    border: 1px solid #ddd;
+    border-width: 0 1px 1px;
+    cursor: s-resize;
+    height: 9px;
+    overflow: hidden;
+    background-color: #eee;
 }
