@@ -1,0 +1,11 @@
+.grippie {
+  background-image: url(lines.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 1px solid #ddd;
+  border-width: 0 1px 1px;
+  cursor: s-resize;
+  height: 9px;
+  overflow: hidden;
+  background-color: #eee;
+}
