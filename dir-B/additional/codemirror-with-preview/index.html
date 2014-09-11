@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="/bower_components/fontawesome/css/font-awesome.css">
+  <script src="/bower_components/jquery/jquery.js"></script>
+
+  <link rel="stylesheet" href="/bower_components/codemirror/lib/codemirror.css">
+  <script src="/bower_components/codemirror/lib/codemirror.js"></script>
+  <script src="/bower_components/codemirror/mode/markdown/markdown.js"></script>
+  <script src="/bower_components/codemirror/addon/mode/overlay.js"></script>
+  <script src="/bower_components/codemirror/mode/xml/xml.js"></script>
+  <script src="/bower_components/codemirror/mode/gfm/gfm.js"></script>
+  <script src="/bower_components/marked/lib/marked.js"></script>
+
+	<link rel="stylesheet" href="sample.css">
+  <link rel="stylesheet" href="editor.css">
+	<script src="editor.js"></script>
+</head>
+<body>
+
+<div class="cm-editor uk-clearfix" data-mode="split">
+  <div class="cm-editor-navbar">
+    <ul class="cm-editor-navbar-nav cm-editor-toolbar">
+      <li><a title="" data-htmleditor-button="bold" data-uk-tooltip="" data-cached-title="Bold"><i class="fa fa-graduation-cap"></i></a></li>
+      <li><a title="" data-htmleditor-button="italic" data-uk-tooltip="" data-cached-title="Italic"><i class="fa fa-automobile"></i></a></li>
+      <li><a title="" data-htmleditor-button="strike" data-uk-tooltip="" data-cached-title="Strikethrough"><i class="fa fa-child"></i></a></li>
+      <li><a title="" data-htmleditor-button="link" data-uk-tooltip="" data-cached-title="Link"><i class="fa fa-cube"></i></a></li>
+      <li><a title="" data-htmleditor-button="image" data-uk-tooltip="" data-cached-title="Image"><i class="fa fa-ge"></i></a></li>
+      <li><a title="" data-htmleditor-button="blockquote" data-uk-tooltip="" data-cached-title="Blockquote"><i class="fa fa-git"></i></a></li>
+      <li><a title="" data-htmleditor-button="listUl" data-uk-tooltip="" data-cached-title="Unordered List"><i class="fa fa-digg"></i></a></li>
+      <li><a title="" data-htmleditor-button="listOl" data-uk-tooltip="" data-cached-title="Ordered List"><i class="fa fa-fax"></i></a></li>
+    </ul>
+    <div class="cm-editor-navbar-flip">
+      <ul class="cm-editor-navbar-nav">
+        <li class="cm-editor-button-code"><a>Markdown</a></li>
+        <li class="cm-editor-button-preview"><a>Preview</a></li>
+        <li><a data-htmleditor-button="fullscreen"><i class="fa fa-recycle"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="cm-editor-content">
+    <div class="cm-editor-code">
+      <textarea id="code">
+#Heading
+
+Lorem ipsum dolor sit **amet**, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. [This is a link](#)
+
+* Item
+* Item
+* Item
+
+## Heading
+
+Ut enim ad *minim* veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+<a href="#">This link is written in HTML</a>
+      </textarea>
+    </div>
+    <div class="cm-editor-preview"></div>
+  </div>
+</div>
+
+</body>
+</html>

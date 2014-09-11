@@ -1,0 +1,23 @@
+{
+  "name": "angular-ui-codemirror",
+  "version": "0.0.0",
+  "authors": [
+    "Andrey Shmelev <andrew.shmelev@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "",
+    "codemirror": "",
+    "marked": "",
+    "angular": "^1.3.0",
+    "fontawesome": "~4.1.0",
+  }
+}

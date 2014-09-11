@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="/bower_components/fontawesome/css/font-awesome.css">
+  <link rel="stylesheet" href="/bower_components/codemirror/lib/codemirror.css">
+
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/codemirror/lib/codemirror.js"></script>
+  <script src="/bower_components/codemirror/mode/markdown/markdown.js"></script>
+  <script src="/bower_components/codemirror/addon/mode/overlay.js"></script>
+  <script src="/bower_components/codemirror/mode/xml/xml.js"></script>
+  <script src="/bower_components/codemirror/mode/gfm/gfm.js"></script>
+  <script src="/bower_components/marked/lib/marked.js"></script>
+
+  <link rel="stylesheet" href="../src/ng-codemirror-with-preview.css">
+  <link rel="stylesheet" href="main.css">
+  <script type="text/javascript" src="../src/ng-codemirror-with-preview.js"></script>
+
+  <script type="text/javascript">
+    angular
+      .module('app', ['ng-codemirror-with-preview'])
+      .controller('CodemirrorSettings', ['$scope', function($scope){
+        $scope.editorOptions = {
+          lineWrapping : true,
+          lineNumbers: false,
+          mode: 'gfm',
+        };
+      }]);
+
+  </script>
+</head>
+<body ng-app="app">
+
+<div ng-controller="CodemirrorSettings">
+  <app-codemirror cm-options="editorOptions">
+#Heading
+
+Lorem ipsum dolor sit **amet**, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. [This is a link](#)
+
+* Item
+* Item
+* Item
+
+## Heading
+
+Ut enim ad *minim* veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+&lt;a href="#"&gt;This link is written in HTML&lt;/a&gt;
+  </app-codemirror>
+</div>
+
+</body>
+</html>
